@@ -1,16 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Navbar = () => {
+const Header = () => {
   return (
-    <div className="container absolute top-9 flex justify-center px-4">
-      <nav className="flex w-full max-w-7xl justify-between">
-        <Link href="/">
+    <header className="absolute inset-x-0 top-0 z-50">
+      <nav
+        className="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <Link href="/" className="-m-1.5 p-1.5">
+          <span className="sr-only">Ronald&apos;s Portfolio</span>
           <Image src="/logo.svg" alt="logo" width={45} height={45} priority />
         </Link>
         <ul className="flex items-center gap-9">
           <li>
-            <Link href="/home" className="uppercase">
+            <Link href="/" className="uppercase">
               Home
             </Link>
           </li>
@@ -32,8 +36,8 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;
