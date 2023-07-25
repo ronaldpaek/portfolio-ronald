@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Footer = () => {
   return (
     <footer className="container mb-16 mt-24">
-      <div className="flex w-full flex-col rounded-2xl bg-blue-300 mb-12">
+      <div className="mb-12 flex w-full flex-col rounded-2xl bg-blue-300">
         <h2>
           Have a project idea to
           <br />
@@ -44,7 +44,7 @@ const Footer = () => {
         </ul>
       </nav>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
