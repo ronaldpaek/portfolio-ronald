@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -70,7 +70,7 @@ const Hero = () => {
         <Image src="/man.svg" alt="man" width={900} height={600} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
