@@ -3,8 +3,8 @@ import Image from 'next/image'
 const Hero = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-[72px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-6 lg:px-8 py-32 content-center min-h-screen">
-        <div className="col-span-1 flex flex-col gap-9">
+      <div className="py-8 mx-auto grid min-h-screen max-w-7xl grid-cols-1 content-center gap-8 px-6 lg:grid-cols-2 lg:px-8 lg:py-32">
+        <div className="order-last col-span-1 flex flex-col gap-9 lg:order-first">
           <h1 className="text-lg font-bold uppercase tracking-widest">
             Hi, I am Ronald
           </h1>
@@ -71,11 +71,7 @@ const Hero = () => {
         </div>
         <div className="col-span-1">
           <div className="aspect-[9/10] rotate-2">
-            <Image
-              src="/profile.png"
-              alt="profile"
-              fill
-            />
+            <Image src="/profile.png" alt="profile" fill />
           </div>
         </div>
       </div>
