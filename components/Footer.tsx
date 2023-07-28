@@ -20,7 +20,7 @@ const Footer = () => {
         </button>
       </div>
       <nav className="flex justify-center">
-        <ul className="flex gap-10">
+        <ul className="flex items-center gap-10">
           <li>
             <a href="#">
               <Image src="/github.svg" alt="github" width={24} height={24} />
