@@ -10,15 +10,13 @@ interface ButtonProps {
 const Button = ({ href, className, children, ...props }: ButtonProps) => {
   className = clsx(
     className,
-    'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold',
+    'inline-flex rounded-full -mx-4.5 py-1.5 -my-1.5 text-sm font-semibold',
   )
-
-  const inner = <span className="relative top-px">{children}</span>
 
   if (href) {
     return (
       <Link href={href} className={className} {...props}>
-        {inner}
+        {children}
       </Link>
     )
   }
