@@ -5,17 +5,17 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-[72px]">
-      <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 content-center gap-8 px-6 py-8 lg:grid-cols-2 lg:px-8 lg:py-32">
+    <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/50 pt-[80px]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 content-start gap-8 px-6 py-8 lg:grid-cols-2 lg:content-center lg:px-8 lg:py-32">
         <div className="order-last col-span-1 flex flex-col gap-9 text-center lg:order-first lg:text-left">
-          <h1 className="text-base font-bold uppercase tracking-widest sm:text-lg">
-            Hi, I am Ronald
+          <h1 className="text-base font-bold tracking-widest sm:text-lg">
+            {`Hey, I'm Ronald`}
           </h1>
           <h2 className="text-3xl font-bold leading-snug sm:text-5xl">
             Professional <br className="hidden lg:block" />
             <span className="relative leading-snug">
               <span
-                className="absolute inset-x-0 bottom-0 top-[65%] hidden bg-[#FFBE62] md:block"
+                className="absolute -inset-x-1 bottom-0 top-[65%] hidden bg-[#FFBE62] md:block"
                 aria-hidden="true"
               />
               <span className="relative">Web Developer</span>
@@ -93,6 +93,7 @@ const Hero = () => {
             alt="profile"
             width={300}
             height={300}
+            priority
             className="relative aspect-[4/3] w-full max-w-xl rotate-2 overflow-hidden rounded-xl bg-zinc-100 object-cover object-top dark:bg-zinc-800 sm:rounded-2xl"
           />
         </div>
