@@ -1,7 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 
-const CaseStudies = () => {
+const Projects = () => {
   return (
     <div className="grid min-h-screen place-content-center">
       <Image
@@ -15,4 +14,4 @@ const CaseStudies = () => {
   )
 }
 
-export default CaseStudies
+export default Projects
