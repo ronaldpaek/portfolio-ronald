@@ -1,11 +1,12 @@
-import { Hero, MySkills } from '@/components'
-
+import { Experience, Hero, Services, Skills } from '@/components'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <MySkills />
+      <Skills />
+      <Services />
+      <Experience />
     </>
   )
 }
