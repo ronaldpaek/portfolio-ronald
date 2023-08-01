@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 const Footer = () => {
   const pathname = usePathname()
 
-  // if (pathname === '/resume') return null
+  if (pathname === '/resume') return null
 
   return (
     <footer className="container mb-16 mt-24">

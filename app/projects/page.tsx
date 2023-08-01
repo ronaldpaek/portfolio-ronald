@@ -6,9 +6,10 @@ const Projects = () => {
       <Image
         src="/logo.svg"
         alt="logo"
-        width={48}
-        height={48}
-        className="hover:animate-spin-slow"
+        width={44}
+        height={44}
+        className="h-10 w-auto"
+        priority
       />
     </div>
   )
