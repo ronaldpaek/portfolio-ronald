@@ -2,8 +2,13 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const pathname = usePathname()
+
+  // if (pathname === '/resume') return null
+
   return (
     <footer className="container mb-16 mt-24">
       <div className="mb-12 flex w-full flex-col rounded-2xl bg-blue-300">
@@ -35,7 +40,12 @@ const Footer = () => {
                 aria-label="Github"
                 className="-m-1.5 inline-flex p-1.5"
               >
-                <Image src="/github.svg" alt="github" width={28} height={28} />
+                <Image
+                  src="/icons/github.svg"
+                  alt="github"
+                  width={28}
+                  height={28}
+                />
               </motion.a>
             </li>
             <li className="flex">
@@ -49,7 +59,7 @@ const Footer = () => {
                 className="-m-1.5 inline-flex p-1.5"
               >
                 <Image
-                  src="/linkedin.svg"
+                  src="/icons/linkedin.svg"
                   alt="linkedin"
                   width={28}
                   height={28}
@@ -64,7 +74,12 @@ const Footer = () => {
                 aria-label="Email"
                 className="-m-1.5 inline-flex p-1.5"
               >
-                <Image src="/email.svg" alt="email" width={28} height={28} />
+                <Image
+                  src="/icons/email.svg"
+                  alt="email"
+                  width={28}
+                  height={28}
+                />
               </motion.a>
             </li>
           </ul>
