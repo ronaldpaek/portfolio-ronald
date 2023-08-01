@@ -4,24 +4,51 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import clsx from 'clsx'
 
 import { Logo } from '@/components'
-import { DownloadIcon } from '@/components/Icons'
 
 interface MobileNavLinkProps {
   children: React.ReactNode
   href: string
 }
 
-const MobileNavLink = ({ children, ...props }: MobileNavLinkProps) => {
+const MobileNavLink = ({ children, ...props }: MobileNavLinkProps) => (
+  <Popover.Button
+    as={Link}
+    className="block text-base leading-7 text-gray-700 hover:text-[#06A88A]"
+    {...props}
+  >
+    {children}
+  </Popover.Button>
+)
+
+interface CustomLinkProps {
+  href: string
+  className: string
+  title: string
+}
+
+const CustomLink = ({ href, className = '', title }: CustomLinkProps) => {
+  const pathname = usePathname()
+
   return (
-    <Popover.Button
-      as={Link}
-      className="block text-base leading-7 text-gray-700 hover:text-[#06A88A]"
-      {...props}
+    <Link
+      href={href}
+      className={clsx(
+        className,
+        'lg:text-light lg:dark:text-dark group relative rounded',
+      )}
     >
-      {children}
-    </Popover.Button>
+      {title}
+      <span
+        className={clsx(
+          'absolute bottom-0 left-0 inline-block h-px bg-[#06A88A] transition-[width] duration-300 ease-in-out group-hover:w-full',
+          pathname === href ? 'w-full' : ' w-0',
+        )}
+      />
+    </Link>
   )
 }
 
@@ -35,23 +62,33 @@ const Header = () => {
           </Link>
           <ul className="hidden lg:flex lg:items-center lg:gap-9">
             <li>
-              <Link
+              {/* <Link
                 href="/projects"
                 className="-m-1.5 p-1.5 uppercase text-black hover:text-[#06A88A]"
               >
                 Projects
-              </Link>
+              </Link> */}
+              <CustomLink
+                href="/projects"
+                title="Projects"
+                className="-my-1 py-1 uppercase text-black"
+              />
             </li>
-            <li className="flex">
-              <Link
+            <li>
+              {/* <Link
                 href="/resume"
                 className="group -m-1.5 inline-flex gap-1 p-1.5"
               >
-                <DownloadIcon fill="#06A88A" />
                 <span className="uppercase text-black group-hover:text-[#06A88A]">
                   Resume
                 </span>
-              </Link>
+                <ExternalLinkIcon fill="#06A88A" />
+              </Link> */}
+              <CustomLink
+                href="/resume"
+                title="Resume"
+                className="-my-1 py-1 uppercase text-black"
+              />
             </li>
           </ul>
         </div>
@@ -66,14 +103,14 @@ const Header = () => {
                   {({ open }) =>
                     open ? (
                       <Image
-                        src="/chevron-up.svg"
+                        src="/icons/chevron-up.svg"
                         alt="chevron-up"
                         width={24}
                         height={24}
                       />
                     ) : (
                       <Image
-                        src="/menu.svg"
+                        src="/icons/menu.svg"
                         alt="menu"
                         width={24}
                         height={24}

@@ -6,30 +6,30 @@ import { motion } from 'framer-motion'
 const Hero = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/50 pt-[80px]">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 content-start gap-8 px-6 py-8 lg:grid-cols-2 lg:content-center lg:px-8 lg:py-32">
+      <div className="mx-auto grid lg:max-w-5xl sm:max-w-2xl grid-cols-1 content-start gap-8 px-6 py-8 lg:grid-cols-2 lg:content-center lg:px-8 lg:py-32">
         <div className="order-last col-span-1 flex flex-col gap-9 text-center lg:order-first lg:text-left">
-          <h1 className="text-base font-bold tracking-widest sm:text-lg">
-            {`Hey, I'm Ronald`}
+          <h1 className="text-4xl font-bold tracking-widest sm:text-5xl">
+            Ronald Paek
           </h1>
-          <h2 className="text-3xl font-bold leading-snug sm:text-5xl">
-            Professional <br className="hidden lg:block" />
+          <h2 className="text-xl font-bold leading-snug sm:text-2xl">
+            {/* Professional <br className="hidden lg:block" /> */}
             <span className="relative leading-snug">
               <span
-                className="absolute -inset-x-1 bottom-0 top-[65%] hidden bg-[#FFBE62] md:block"
+                className="absolute -inset-x-1 bottom-0 top-[65%] bg-[#FFBE62]"
                 aria-hidden="true"
               />
-              <span className="relative">Web Developer</span>
+              <span className="relative">Software Engineer</span>
             </span>
-            <br />
-            based in USA
+            {/* <br />
+            based in USA */}
           </h2>
-          <p className="text-sm sm:text-base">
+          <p className="text-base">
             Transforming the web one line of code at a time. Crafting
             cutting-edge digital experiences with precision, passion, and a
             profound commitment to excellence.
           </p>
           <nav>
-            <motion.div className="">
+            <motion.div>
               <ul className="flex items-center justify-center gap-9 lg:justify-start">
                 <li className="flex">
                   <motion.a
@@ -42,7 +42,7 @@ const Hero = () => {
                     className="-m-1.5 inline-flex p-1.5"
                   >
                     <Image
-                      src="/github.svg"
+                      src="/icons/github.svg"
                       alt="github"
                       width={28}
                       height={28}
@@ -60,7 +60,7 @@ const Hero = () => {
                     className="-m-1.5 inline-flex p-1.5"
                   >
                     <Image
-                      src="/linkedin.svg"
+                      src="/icons/linkedin.svg"
                       alt="linkedin"
                       width={28}
                       height={28}
@@ -76,7 +76,7 @@ const Hero = () => {
                     className="-m-1.5 inline-flex p-1.5"
                   >
                     <Image
-                      src="/email.svg"
+                      src="/icons/email.svg"
                       alt="email"
                       width={28}
                       height={28}
