@@ -1,6 +1,14 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const pathname = usePathname()
+
+  if (pathname === '/resume') return null
+
   return (
     <footer className="container mb-16 mt-24">
       <div className="mb-12 flex w-full flex-col rounded-2xl bg-blue-300">
@@ -20,28 +28,62 @@ const Footer = () => {
         </button>
       </div>
       <nav className="flex justify-center">
-        <ul className="flex gap-10">
-          <li>
-            <a href="#">
-              <Image src="/github.svg" alt="github" width={24} height={24} />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Image
-                src="/linkedin.svg"
-                alt="linkedin"
-                width={20}
-                height={20}
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Image src="/twitter.svg" alt="twitter" width={24} height={24} />
-            </a>
-          </li>
-        </ul>
+        <motion.div className="">
+          <ul className="flex items-center justify-center gap-9 lg:justify-start">
+            <li className="flex">
+              <motion.a
+                target="_blank"
+                href="https://github.com/ronaldpaek"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Github"
+                className="-m-1.5 inline-flex p-1.5"
+              >
+                <Image
+                  src="/icons/github.svg"
+                  alt="github"
+                  width={28}
+                  height={28}
+                />
+              </motion.a>
+            </li>
+            <li className="flex">
+              <motion.a
+                target="_blank"
+                href="https://www.linkedin.com/in/ronaldpaek/"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="LinkedIn"
+                className="-m-1.5 inline-flex p-1.5"
+              >
+                <Image
+                  src="/icons/linkedin.svg"
+                  alt="linkedin"
+                  width={28}
+                  height={28}
+                />
+              </motion.a>
+            </li>
+            <li className="flex">
+              <motion.a
+                href="mailto:ronaldpaek@gmail.com"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Email"
+                className="-m-1.5 inline-flex p-1.5"
+              >
+                <Image
+                  src="/icons/email.svg"
+                  alt="email"
+                  width={28}
+                  height={28}
+                />
+              </motion.a>
+            </li>
+          </ul>
+        </motion.div>
       </nav>
     </footer>
   )

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-const Logo = () => {
+const Projects = () => {
   return (
-    <div>
+    <div className="grid min-h-screen place-content-center">
       <Image
         src="/logo.svg"
         alt="logo"
@@ -15,4 +15,4 @@ const Logo = () => {
   )
 }
 
-export default Logo
+export default Projects
