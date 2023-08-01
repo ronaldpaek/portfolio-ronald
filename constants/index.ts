@@ -42,3 +42,27 @@ export const services: Service[] = [
       'Improving website performance by optimizing page load times, and minimizing resource usage',
   },
 ]
+
+export type navLink = {
+  pathname: string
+  title: string
+}
+
+export const navLinks: navLink[] = [
+  {
+    pathname: '/',
+    title: 'Home',
+  },
+  {
+    pathname: '/about',
+    title: 'About',
+  },
+  {
+    pathname: '/projects',
+    title: 'Projects',
+  },
+  {
+    pathname: '/contact',
+    title: 'Contact',
+  },
+]
